@@ -46,14 +46,15 @@ export default function Navbar() {
     <motion.header
       animate={{ y: hidden ? '-100%' : '0%' }}
       transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-      className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/60 backdrop-blur-xl"
+      className="fixed inset-x-0 top-0 z-50 border-b border-ink/10 backdrop-blur-xl"
+      style={{ backgroundColor: '#ffffff', boxShadow: '0 1px 8px rgba(0,0,0,0.08)' }}
     >
       <nav className="mx-auto flex h-[84px] max-w-[1400px] items-center justify-between px-6 lg:px-10">
         <a href="#home" className="flex items-center gap-2">
           <img
             src="/logo-BarwBMNv-removebg-preview.png"
             alt="Logo"
-            style={{ height: '32px', width: 'auto', objectFit: 'contain' }}
+            style={{ height: '52px', width: 'auto', objectFit: 'contain' }}
           />
         </a>
 
@@ -67,19 +68,19 @@ export default function Navbar() {
             >
               <a
                 href={item.href}
-                className="flex items-center gap-1 text-[15px] font-medium text-white/85 transition-colors hover:text-primary"
+                className="flex items-center gap-1 text-[15px] font-medium text-ink/80 transition-colors hover:text-primary"
               >
                 {item.label}
                 {item.children && <ChevronDown size={14} />}
               </a>
               {item.children && dropdown === item.label && (
                 <div className="absolute left-0 top-full w-56 pt-3">
-                  <div className="overflow-hidden rounded-xl bg-ink-800 py-2 shadow-2xl ring-1 ring-white/10">
+                  <div className="overflow-hidden rounded-xl bg-white py-2 shadow-2xl ring-1 ring-ink/10">
                     {item.children.map((child) => (
                       <a
                         key={child.label}
                         href={child.href}
-                        className="block px-4 py-2.5 text-sm text-white/80 transition-colors hover:bg-primary/10 hover:text-primary"
+                        className="block px-4 py-2.5 text-sm text-ink/70 transition-colors hover:bg-primary/10 hover:text-primary"
                       >
                         {child.label}
                       </a>
@@ -98,17 +99,17 @@ export default function Navbar() {
           Book A Call Now
         </a>
 
-        <button className="text-white lg:hidden" onClick={() => setOpen((v) => !v)} aria-label="Toggle menu">
+        <button className="text-ink lg:hidden" onClick={() => setOpen((v) => !v)} aria-label="Toggle menu">
           {open ? <X size={26} /> : <Menu size={26} />}
         </button>
       </nav>
 
       {open && (
-        <div className="border-t border-white/10 bg-ink px-6 pb-6 lg:hidden">
+        <div className="border-t border-ink/10 bg-white px-6 pb-6 lg:hidden">
           <div className="flex flex-col gap-1 pt-3">
             {NAV.map((item) => (
               <div key={item.label}>
-                <a href={item.href} onClick={() => setOpen(false)} className="block py-2.5 text-base font-medium text-white">
+                <a href={item.href} onClick={() => setOpen(false)} className="block py-2.5 text-base font-medium text-ink">
                   {item.label}
                 </a>
                 {item.children && (
@@ -118,7 +119,7 @@ export default function Navbar() {
                         key={child.label}
                         href={child.href}
                         onClick={() => setOpen(false)}
-                        className="block py-1.5 text-sm text-white/70"
+                        className="block py-1.5 text-sm text-ink/60"
                       >
                         {child.label}
                       </a>
