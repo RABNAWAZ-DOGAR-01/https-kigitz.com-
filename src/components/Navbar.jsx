@@ -50,7 +50,11 @@ export default function Navbar() {
     >
       <nav className="mx-auto flex h-[84px] max-w-[1400px] items-center justify-between px-6 lg:px-10">
         <a href="#home" className="flex items-center gap-2">
-          <img src="/logo-BarwBMNv-removebg-preview.png" alt="Logo" height="38" style={{ width: 'auto' }} />
+          <img
+            src="/logo-BarwBMNv-removebg-preview.png"
+            alt="Logo"
+            style={{ height: '32px', width: 'auto', objectFit: 'contain' }}
+          />
         </a>
 
         <div className="hidden items-center gap-8 lg:flex">
